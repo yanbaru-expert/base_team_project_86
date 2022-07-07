@@ -1,0 +1,8 @@
+<h1>タスク 一覧</h1>
+<%= link_to "投稿画面へ", "/tasks/new" %>
+<% @tasks.each do |task| %>
+  <p>
+    <%= task.title %>
+    <%= task.content %>
+  </p>
+<% end %>

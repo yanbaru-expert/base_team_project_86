@@ -3,8 +3,8 @@
 <% @tasks.each do |task| %>
   <p>
     <%= task.title %>
-    <%= task.content %>
     <%= link_to "詳細", "/tasks/#{task.id}", method: :get %>
     <%= link_to "編集", "/tasks/#{task.id}/edit", method: :get %>
+    <%= link_to "削除", "/tasks/#{task.id}", method: :delete,data: {confirm: "削除しますか?"}%>
   </p>
 <% end %>

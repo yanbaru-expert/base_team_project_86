@@ -28,6 +28,12 @@ class TasksController < ApplicationController
     task.update(task_params)
   end
 
+  #削除アクションを定義
+  def destroy
+    task = Task.find(params[:id])
+    task.destroy
+  end
+
   private
 
   def task_params

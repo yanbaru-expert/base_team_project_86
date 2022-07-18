@@ -1,2 +1,13 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>ユーザー 作成</h1>
+<%= form_with model: @user, local: true do |f| %>
+  <div>
+    <%= f.label "氏名"%>
+    <%= f.text_field :name  %>
+  </div>
+  <div>
+    <%= f.label "年齢"%>
+    <%= f.text_field  :age%>
+  </div>
+  <%= f.submit :"送信" %>
+<% end %>
+<div><%= link_to "一覧画面へ", users_path %></div>

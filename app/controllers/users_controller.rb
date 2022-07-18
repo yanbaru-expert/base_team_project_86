@@ -3,9 +3,11 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
 
   def create
+    User.create!(user_params)
   end
 
   def show
@@ -18,5 +20,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:name, :age)
   end
 end
